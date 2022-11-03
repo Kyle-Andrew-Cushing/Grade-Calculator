@@ -1,10 +1,8 @@
 import java.io.File;
-import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
-import java.io.FileWriter; // Import the FileWriter class
-import java.io.IOException;  // Import the IOException class to handle errors
-import java.io.FileNotFoundException;  // Import this class to handle errors
-import java.util.Scanner; // Import the Scanner class to read text files
+import java.io.IOException;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class grade{
 
@@ -244,7 +242,7 @@ public class grade{
 			percentE = (double)examTotal/fullTotalE;
 		}
 		double truePercent=40*percentA+15*percentQ+30*percentE;
-		System.out.println("\n Overall Grade: "+overallPercent);
+		System.out.println("\nOverall Grade: "+overallPercent);
 		System.out.println("Current Grade: "+truePercent);
 		System.out.println("\nOverall Grade assumes 100% on ungraded categories\nCurrent Grade assumes 0% on ungraded categories");
 	}
@@ -295,11 +293,12 @@ public class grade{
 				finalGrade();
 			}
 			else{
-				System.out.println("Error: No valid argument. Try 'help'.");
+				System.out.println("Error: Invalid argument. Try 'help'.");
 			}
 		}
 		else{
-			System.out.println("Error: No argument. Try 'help'.");
+			catPoints();
+			finalGrade();
 		}
 		//test(new File("."));
 	}
