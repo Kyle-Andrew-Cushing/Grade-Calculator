@@ -242,8 +242,8 @@ public class grade{
 			percentE = (double)examTotal/fullTotalE;
 		}//end if
 		double truePercent=40*percentA+15*percentQ+30*percentE;
-		System.out.println("\nOverall Grade: "+overallPercent);
-		System.out.println("Current Grade: "+truePercent);
+		System.out.println("\nOverall Grade: "+overallPercent+"%");
+		System.out.println("Current Grade: "+truePercent+"%");
 		System.out.println("\nOverall Grade assumes 100% on ungraded categories\nCurrent Grade assumes 0% on ungraded categories");
 	}//end percentage
 
