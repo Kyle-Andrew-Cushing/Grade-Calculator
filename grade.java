@@ -51,13 +51,16 @@ public class grade{
 	      		while (sc.hasNextLine()) {
 	        		temp=sc.nextLine();
 	        		if(temp.contains("Total")){
-	        			total+=Integer.parseInt(temp.substring(0,2));
+	        			total+=Integer.parseInt(temp.split(" ")[0]);
 	        		}//end if
 	        		else if(temp.contains("points)")){
 	        			temp=temp.split("\\(")[1];
 	        			temp=temp.split(" ")[0];
 	        			fullTotal+=Integer.parseInt(temp);
 	        		}//end else if
+	        		else if(temp.contains("Credit")){
+	        				fullTotal+=100;
+	        			}//end else if
 					j++;
 				}//end while loop
 			}//end try
@@ -94,7 +97,7 @@ public class grade{
         			parentName=grades.get(i).getParent();
         			if (parentName.contains("quiz")){
         				if(temp.contains("Total")){
-        					quizTotal+=Integer.parseInt(temp.substring(0,2));
+        					quizTotal+=Integer.parseInt(temp.split(" ")[0]);
         				}//end if
         				else if(temp.contains("points)")){
 	        				temp=temp.split("\\(")[1];
@@ -104,7 +107,7 @@ public class grade{
         			}//end if
         			else if (parentName.contains("exam")){
         				if(temp.contains("Total")){
-        					examTotal+=Integer.parseInt(temp.substring(0,2));
+        					examTotal+=Integer.parseInt(temp.split(" ")[0]);
         				}//end if
         				else if(temp.contains("points)")){
 	        				temp=temp.split("\\(")[1];
@@ -114,12 +117,15 @@ public class grade{
         			}//end else if
         			else{
         				if(temp.contains("Total")){
-        					assignmentTotal+=Integer.parseInt(temp.substring(0,2));
+        					assignmentTotal+=Integer.parseInt(temp.split(" ")[0]);
         				}//end if
         				else if(temp.contains("points)")){
 	        				temp=temp.split("\\(")[1];
 	        				temp=temp.split(" ")[0];
 	        				fullTotalA+=Integer.parseInt(temp);
+	        			}//end else if
+	        			else if(temp.contains("Credit")){
+	        				fullTotalA+=100;
 	        			}//end else if
         			}//end else
 					j++;
@@ -175,7 +181,7 @@ public class grade{
         			parentName=grades.get(i).getParent();
         			if (parentName.contains("quiz")){
         				if(temp.contains("Total")){
-        					quizTotal+=Integer.parseInt(temp.substring(0,2));
+        					quizTotal+=Integer.parseInt(temp.split(" ")[0]);
         				}//end if
         				else if(temp.contains("points)")){
 	        				temp=temp.split("\\(")[1];
@@ -185,7 +191,7 @@ public class grade{
         			}//end if
         			else if (parentName.contains("exam")){
         				if(temp.contains("Total")){
-        					examTotal+=Integer.parseInt(temp.substring(0,2));
+        					examTotal+=Integer.parseInt(temp.split(" ")[0]);
         				}//end if
         				else if(temp.contains("points)")){
 	        				temp=temp.split("\\(")[1];
@@ -195,12 +201,15 @@ public class grade{
         			}//end else if
         			else{
         				if(temp.contains("Total")){
-        					assignmentTotal+=Integer.parseInt(temp.substring(0,2));
+        					assignmentTotal+=Integer.parseInt(temp.split(" ")[0]);
         				}//end if
         				else if(temp.contains("points)")){
 	        				temp=temp.split("\\(")[1];
 	        				temp=temp.split(" ")[0];
 	        				fullTotalA+=Integer.parseInt(temp);
+	        			}//end else if
+	        			else if(temp.contains("Credit")){
+	        				fullTotalA+=100;
 	        			}//end else if
         			}//end else
 					j++;
